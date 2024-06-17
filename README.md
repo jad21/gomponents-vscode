@@ -1,3 +1,3 @@
-# gomponents-ext README
+# gomponents-ext 
 
-This is the README for your extension "gomponents-ext". After writing up a brief description, we recommend including the following sections.
+Extension to enhance Go syntax support

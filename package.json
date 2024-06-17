@@ -5,15 +5,26 @@
   "publisher": "jad21",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.90.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Programming Languages"
   ],
   "scripts": {
-    "pack": "vsce package"
+    "package": "vsce package"
   },
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:go"
+  ],
+  "main": "./src/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "extension.convertHtmlToGomponent",
+        "title": "Convert HTML to Gomponent"
+      }
+    ],
     "grammars": [
       {
         "path": "./syntaxes/go.tmLanguage.json",
@@ -25,6 +36,20 @@
           "meta.embedded.block.html": "html"
         }
       }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.convertHtmlToGomponent",
+        "key": "ctrl+shift+c",
+        "when": "editorTextFocus"
+      }
     ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "jsdom": "^24.1.0"
   }
 }
