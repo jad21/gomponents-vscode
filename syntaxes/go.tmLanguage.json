@@ -1,0 +1,36 @@
+{
+  "fileTypes": ["go"],
+  "injectionSelector": "L:source -comment -string",
+  "patterns": [
+    {
+      "name": "meta.embedded.block.html",
+      "begin": "(Rawf?)\\((`)",
+      "beginCaptures": {
+        "1": {
+          "name": "support.function.go"
+        },
+        "2": {
+          "name": "punctuation.definition.begin.bracket.round.go"
+        },
+        "3": {
+          "name": "punctuation.definition.string.begin.go"
+        }
+      },
+      "end": "(`)\\)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.end.go"
+        },
+        "2": {
+          "name": "punctuation.definition.end.bracket.round.goo"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.html.basic"
+        }
+      ]
+    }
+  ],
+  "scopeName": "html-string.injection"
+}

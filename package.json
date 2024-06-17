@@ -1,0 +1,30 @@
+{
+  "name": "gomponents-ext",
+  "displayName": "gomponents-ext",
+  "description": "Extension to enhance Go syntax support",
+  "publisher": "jad21",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "scripts": {
+    "pack": "vsce package"
+  },
+  "contributes": {
+    "grammars": [
+      {
+        "path": "./syntaxes/go.tmLanguage.json",
+        "scopeName": "html-string.injection",
+        "injectTo": [
+          "source.go"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.html": "html"
+        }
+      }
+    ]
+  }
+}
