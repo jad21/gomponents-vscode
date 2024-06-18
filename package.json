@@ -3,7 +3,7 @@
   "displayName": "gomponents-ext",
   "description": "Extension to enhance Go syntax support",
   "publisher": "jad21",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -11,13 +11,16 @@
     "Programming Languages"
   ],
   "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack --mode production",
+    "watch": "webpack --watch",
     "package": "vsce package"
   },
   "activationEvents": [
     "onStartupFinished",
     "onLanguage:go"
   ],
-  "main": "./src/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -47,7 +50,12 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.60.0",
-    "vscode": "^1.1.37"
+    "empty-module": "^0.0.2",
+    "source-map-loader": "^5.0.0",
+    "ts-loader": "^9.5.1",
+    "vscode": "^1.1.37",
+    "webpack": "^5.92.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "jsdom": "^24.1.0"

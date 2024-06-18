@@ -16,7 +16,7 @@
           "name": "punctuation.definition.string.begin.go"
         }
       },
-      "end": "(`)\\)",
+      "end": "(`)(\\)|,)",
       "endCaptures": {
         "1": {
           "name": "punctuation.definition.string.end.go"
